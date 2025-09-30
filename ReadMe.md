@@ -1,4 +1,4 @@
-# Configuring Kerio Control VPN Client for Linux
+# Установка Kerio Control VPN Client на Linux
 
 ## Обзор
 Kerio Control VPN Client — инструмент для безопасного подключения к приватной сети через шлюз Kerio Control.
@@ -16,7 +16,12 @@ sudo apt-get install debconf openssl
 
 ---
 
-## Установка  
+## Установка
+
+### Скачивание клиента
+
+Скачать Kerio Control VPN Client можно с официального сайта:
+[http://download.kerio.com/archive/download.php](http://download.kerio.com/archive/download.php)
 
 ### Для 32-битной системы
 ```bash
@@ -93,15 +98,26 @@ sudo /etc/init.d/kerio-kvc reload
 
 ### Ручное управление
 
+Запуск
+```bash
+sudo /etc/init.d/kerio-kvc start
+```
+---
+Остановка
+```bash
+sudo /etc/init.d/kerio-kvc stop
+```
+---
+Перезапуск
+```bash
+sudo /etc/init.d/kerio-kvc restart
+```
+---
+
 Примеры команд установки, конфигурации и запуска:
 
 ![file7](file7.png)
-
-```bash
-sudo /etc/init.d/kerio-kvc start
-sudo /etc/init.d/kerio-kvc stop
-sudo /etc/init.d/kerio-kvc restart
-```
+---
 
 При активном подключении в **Status → VPN clients** статус будет: **Connected**
 
@@ -109,7 +125,7 @@ sudo /etc/init.d/kerio-kvc restart
 
 ---
 
-## Удаление  
+## Удаление
 
 Удалить пакет, оставив конфигурацию:
 ```bash
